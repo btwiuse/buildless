@@ -17,6 +17,7 @@
     <script type="importmap">
       {
         "imports": {
+          "eruda": "https://esm.sh/eruda",
           "vue": "https://esm.sh/vue@3/dist/vue.esm-browser.js",
           "preact": "https://esm.sh/preact@10.19.2",
           "preact/": "https://esm.sh/preact@10.19.2/",
@@ -33,6 +34,10 @@
           "@polkadot/api": "https://esm.sh/@polkadot/api"
         }
       }
+    </script>
+    <script type="module">
+      import eruda from "eruda";
+      eruda.init();
     </script>
     <script type="module" src="script.js"></script>
   </head>
