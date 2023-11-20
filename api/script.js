@@ -1,13 +1,5 @@
 // import { ProgramMetadata } from "@gear-js/api";
-import {
-  isWeb3Injected,
-  web3Accounts,
-  web3AccountsSubscribe,
-  web3Enable,
-  web3EnablePromise,
-  web3FromAddress,
-  web3FromSource,
-} from "@polkadot/extension-dapp";
+
 import { ApiPromise, WsProvider } from "@polkadot/api";
 import * as types from "@polkadot/types";
 import * as util from "@polkadot/util";
@@ -34,9 +26,3 @@ uiKeyring.loadAll({
 window.keyring = uiKeyring.keyring;
 
 console.log("ss58 prefix:", api.consts.system.ss58Prefix.toNumber());
-console.log("isWeb3Injected:", isWeb3Injected);
-
-if (!isWeb3Injected) {
-  window.alert("Please install/enable polkadot.js extension");
-}
-await web3Enable("page");
