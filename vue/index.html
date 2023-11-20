@@ -1,15 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <title>Vue</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="manifest" href="manifest.json" />
     <!--
       Need a visual blank slate?
       Remove all code in `styles.css`!
     -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
     <link
       href="https://assets-global.website-files.com/60f57c496975b84c29335fb7/6108e5c4858ed189a967a6c4_32.png"
       rel="shortcut icon"
@@ -18,6 +17,13 @@
     <script type="importmap">
       {
         "imports": {
+          "vue": "https://esm.sh/vue@3/dist/vue.esm-browser.js",
+          "preact": "https://esm.sh/preact@10.19.2",
+          "preact/": "https://esm.sh/preact@10.19.2/",
+          "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact",
+          "htm": "https://esm.sh/htm",
+          "react": "https://esm.sh/preact@10.19.2/compat",
+          "react-dom": "https://esm.sh/preact@10.19.2/compat",
           "@gear-js/api": "https://esm.sh/@gear-js/api",
           "@polkadot/types": "https://esm.sh/@polkadot/types",
           "@polkadot/util": "https://esm.sh/@polkadot/util",
@@ -28,20 +34,21 @@
         }
       }
     </script>
-    <script type="module" src="script.js" async></script>
+    <script type="module" src="script.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <nav>
-      <a href="/" aria-current="page">Home</a>
+      <a href="/">Home</a>
       <a href="/api/">Api</a>
       <a href="/wallet/">Wallet</a>
       <a href="/react/">React</a>
       <a href="/preact/">Preact</a>
-      <a href="/vue/">Vue</a>
+      <a href="/vue/" aria-current="page">Vue</a>
     </nav>
     <main>
-      <h1>Home page</h1>
+      <h1>Vue</h1>
     </main>
+    <div id="app">{{ message }}</div>
   </body>
 </html>
