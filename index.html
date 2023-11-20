@@ -19,6 +19,7 @@
       {
         "imports": {
           "eruda": "https://esm.sh/eruda",
+          "browser-fs-access": "https://esm.sh/browser-fs-access/dist/index.modern.js",
           "preact": "https://esm.sh/preact@10.19.2",
           "preact/": "https://esm.sh/preact@10.19.2/",
           "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact",
@@ -48,9 +49,23 @@
       <a href="/preact/">Preact</a>
       <a href="/vue/">Vue</a>
       <a href="/htmx/">Htmx</a>
+      <a href="/solid/">Solid</a>
     </nav>
     <main id="app">
       <h1>Home page</h1>
     </main>
+    <button id="select-file">Select a text file</button>
+    <script type="module">
+      // https://publishing-project.rivendellweb.net/import-maps-everywhere/
+      import { fileOpen } from "browser-fs-access";
+
+      const button = document.getElementById("select-file");
+      button.addEventListener("click", async () => {
+        const file = await fileOpen({
+          mimeTypes: ["text/plain"],
+        });
+        console.log(new Date(), await file.text());
+      });
+    </script>
   </body>
 </html>
