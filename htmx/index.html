@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Preact</title>
+    <title>Vue</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--
@@ -17,10 +17,13 @@
     <script type="importmap">
       {
         "imports": {
+          "htmx.org": "https://esm.sh/htmx.org@1.9.8",
           "eruda": "https://esm.sh/eruda",
+          "vue": "https://esm.sh/vue@3/dist/vue.esm-browser.js",
           "preact": "https://esm.sh/preact@10.19.2",
           "preact/": "https://esm.sh/preact@10.19.2/",
           "htm/preact": "https://esm.sh/htm@3.1.1/preact?external=preact",
+          "htm": "https://esm.sh/htm",
           "react": "https://esm.sh/preact@10.19.2/compat",
           "react-dom": "https://esm.sh/preact@10.19.2/compat",
           "@gear-js/api": "https://esm.sh/@gear-js/api",
@@ -33,6 +36,11 @@
         }
       }
     </script>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.8"
+      integrity="sha384-rgjA7mptc2ETQqXoYC3/zJvkU7K/aP44Y+z7xQuJiVnB/422P/Ak+F/AqFR7E4Wr"
+      crossorigin="anonymous"
+    ></script>
     <script type="module">
       import eruda from "eruda";
       eruda.init();
@@ -46,13 +54,22 @@
       <a href="/api/">Api</a>
       <a href="/wallet/">Wallet</a>
       <a href="/react/">React</a>
-      <a href="/preact/" aria-current="page">Preact</a>
+      <a href="/preact/">Preact</a>
       <a href="/vue/">Vue</a>
-      <a href="/htmx/">Htmx</a>
+      <a href="/htmx/" aria-current="page">Htmx</a>
     </nav>
     <main>
-      <h1>Preact</h1>
+      <h1>Htmx</h1>
+      <div id="parent">
+        <button
+          hx-get="./clicked/"
+          hx-trigger="click"
+          hx-target="#parent"
+          hx-swap="outerHTML"
+        >
+          Click Me!
+        </button>
+      </div>
     </main>
-    <div id="root"></div>
   </body>
 </html>
