@@ -17,6 +17,7 @@
     <script type="importmap">
       {
         "imports": {
+          "eruda": "https://esm.sh/eruda",
           "@gear-js/api": "https://esm.sh/@gear-js/api",
           "@polkadot/types": "https://esm.sh/@polkadot/types",
           "@polkadot/util": "https://esm.sh/@polkadot/util",
@@ -27,11 +28,11 @@
         }
       }
     </script>
-    <script type="module" src="script.js" async></script>
-    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <script>
+    <script type="module">
+      import eruda from "eruda";
       eruda.init();
     </script>
+    <script type="module" src="script.js" async></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
