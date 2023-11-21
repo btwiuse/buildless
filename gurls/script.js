@@ -1,5 +1,5 @@
 import { meta } from "./gurls-v0.0.1.js";
-import { PROGRAM_ID, RPC_NODE } from "./config.js";
+import { PROGRAM_ID, RPC_NODE } from "./config.json";
 import YAML from "yaml";
 
 import {
